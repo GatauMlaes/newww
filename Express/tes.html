@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        #track{
+            position: fixed;
+            width: 200px;
+            transform: translate(-50%,-50%);
+            z-index: 99;
+            pointer-events: none;
+            transition: all .01s;
+        }
+        #track .svg {
+            margin-left: 50px;
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            border-radius: 100%;
+            position: relative;
+
+        }
+
+        #track .svg::after{
+            content: '';
+            display: block;
+            background-color: red;
+            border-radius: 100%;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 30px;
+            left: 20px;
+        }
+
+        BANTUL KENTOD
+
+
+        #track .svg::before{
+            content: '';
+            display: block;
+            background-color: red;
+            border-radius: 100%;
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            top: 30px;
+            right: 15px;
+        }
+
+        #track .svg span{
+            display: inline-block;
+            background-color: aliceblue;
+            width: 70px;
+            height: 5px;
+            position: absolute;
+            border-radius: 10px;
+            top: 70px;
+            left: 15px;
+        }
+    </style>
+</head>
+<body>
+<div id="track"><div class="svg"><span></span></div></div>
+
+<script>
+    const track = document.getElementById('track')
+    
+    window.addEventListener("mousemove", e => {
+        track.style.left = `${e.clientX}px`;
+        track.style.top = `${e.clientY}px`;
+     
+    })
+</script>
+</body>
+</html>
